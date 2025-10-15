@@ -88,6 +88,7 @@ nav a:hover {
 .hero h1 {
   margin: 0;
   font-size: 2.5rem;
+  color: #dafff0;
 }
 
 .hero p {
@@ -188,4 +189,82 @@ footer {
   .featured {
     grid-template-columns: 1fr;
   }
+}
+.hidden {
+  display: none;
+}
+
+.contact {
+  background: rgba(255, 255, 255, 0.85);
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  max-width: 700px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.contact p {
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form .form-group {
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent1);
+  box-shadow: 0 0 4px var(--accent1);
+}
+
+.contact-form .btn {
+  background: var(--accent1);
+  color: #fff;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form .btn:hover {
+  background: var(--accent2);
+}
+
+nav a.active {
+  color: var(--accent1);
+  font-weight: 600;
 }

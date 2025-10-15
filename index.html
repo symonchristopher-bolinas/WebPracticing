@@ -16,75 +16,142 @@
   <body>
     <video autoplay muted loop id="bg-video">
       <source src="assets/homebg.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
     </video>
+
     <header>
       <div class="brand">DailyBlogs</div>
       <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Categories</a>
-        <a href="#">Contact</a>
+        <a href="#" id="home-link" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#categories">Categories</a>
+        <a href="#" id="contact-link">Contact</a>
       </nav>
     </header>
 
-    <section class="hero">
-      <h1>Welcome to DailyBlogs</h1>
-      <p>
-        Your dose of inspiration, news, and stories — shared fresh every day.
-      </p>
-    </section>
-
-    <div class="container">
-      <section class="featured">
-        <img
-          src="https://source.unsplash.com/800x500/?writing,blog"
-          alt="Featured blog"
-        />
-        <div class="featured-content">
-          <h2>Featured Story: The Power of Consistency</h2>
-          <p>
-            Discover how small daily actions can create massive long-term
-            success. Learn habits that top creators use to stay productive every
-            day.
-          </p>
-          <a href="#" class="btn">Read Full Story</a>
-        </div>
+    <div id="home-section">
+      <section class="hero">
+        <h1>Welcome to DailyBlogs</h1>
+        <p>
+          Your dose of inspiration, news, and stories — shared fresh every day.
+        </p>
       </section>
 
-      <h2 style="margin-bottom: 1rem">Recent Posts</h2>
-      <section class="posts">
-        <div class="post">
-          <img src="https://source.unsplash.com/400x250/?nature" alt="" />
-          <h3>Morning Reflections</h3>
-          <p>
-            Start your day with mindfulness — how to set the tone for a positive
-            morning routine.
-          </p>
-        </div>
+      <div class="container">
+        <section class="featured">
+          <img src="assets/feature.jpg" alt="Featured blog" />
+          <div class="featured-content">
+            <h2>Featured Story: The Power of Consistency</h2>
+            <p>
+              Discover how small daily actions can create massive long-term
+              success. Learn habits that top creators use to stay productive
+              every day.
+            </p>
+            <a href="#" class="btn">Read Full Story</a>
+          </div>
+        </section>
 
-        <div class="post">
-          <img src="https://source.unsplash.com/400x250/?city" alt="" />
-          <h3>City Life Diaries</h3>
-          <p>
-            Daily stories from the bustling streets — finding calm in the chaos
-            of modern life.
-          </p>
-        </div>
+        <h2 style="margin-bottom: 1rem">Recent Posts</h2>
+        <section class="posts">
+          <div class="post">
+            <img src="assets/morning.jpg" alt="" />
+            <h3>Morning Reflections</h3>
+            <p>
+              Start your day with mindfulness — how to set the tone for a
+              positive morning routine.
+            </p>
+          </div>
 
-        <div class="post">
-          <img src="https://source.unsplash.com/400x250/?coffee" alt="" />
-          <h3>The Coffee Journal</h3>
-          <p>
-            Every cup tells a story — exploring café culture and the art of slow
-            mornings.
-          </p>
-        </div>
-      </section>
+          <div class="post">
+            <img src="assets/street.jpg" alt="" />
+            <h3>City Life Diaries</h3>
+            <p>
+              Daily stories from the bustling streets — finding calm in the
+              chaos of modern life.
+            </p>
+          </div>
+
+          <div class="post">
+            <img src="assets/cup.jpg" alt="" />
+            <h3>The Coffee Journal</h3>
+            <p>
+              Every cup tells a story — exploring café culture and the art of
+              slow mornings.
+            </p>
+          </div>
+        </section>
+      </div>
     </div>
+
+    <section id="contact-section" class="contact hidden">
+      <h2>Contact Us</h2>
+      <p>We’d love to hear from you! Send us your thoughts or inquiries.</p>
+
+      <form action="#" method="post" class="contact-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your full name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="your@email.com"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Write your message here..."
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
 
     <footer>
       © 2025 DailyBlogs. All rights reserved. Built with heart for storytellers.
     </footer>
+
+    <script>
+      const homeLink = document.getElementById("home-link");
+      const contactLink = document.getElementById("contact-link");
+      const homeSection = document.getElementById("home-section");
+      const contactSection = document.getElementById("contact-section");
+
+      homeSection.classList.remove("hidden");
+      contactSection.classList.add("hidden");
+
+      homeLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        homeSection.classList.remove("hidden");
+        contactSection.classList.add("hidden");
+        homeLink.classList.add("active");
+        contactLink.classList.remove("active");
+      });
+
+      contactLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        contactSection.classList.remove("hidden");
+        homeSection.classList.add("hidden");
+        contactLink.classList.add("active");
+        homeLink.classList.remove("active");
+      });
+    </script>
   </body>
 </html>
