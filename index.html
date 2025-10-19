@@ -22,9 +22,10 @@
       <div class="brand">DailyBlogs</div>
       <nav>
         <a href="#" id="home-link" class="active">Home</a>
-        <a href="#about">About</a>
+        <a href="#" id="about-link">About</a>
         <a href="#categories">Categories</a>
         <a href="#" id="contact-link">Contact</a>
+        <a href="#" id="signin-link">Sign In</a>
       </nav>
     </header>
 
@@ -82,6 +83,27 @@
       </div>
     </div>
 
+    <section id="about-section" class="about hidden">
+      <h2>About DailyBlogs</h2>
+      <p>
+        DailyBlogs was created to inspire, inform, and connect storytellers from
+        all walks of life. We believe that sharing personal stories,
+        experiences, and insights brings people closer and sparks creativity.
+      </p>
+
+      <p>
+        Whether you’re a passionate writer, a curious reader, or just someone
+        looking for daily motivation, this platform is for you. Our goal is to
+        make writing and reading a habit that fuels growth and understanding
+        every single day.
+      </p>
+
+      <p>
+        Join our community of storytellers and start sharing your journey, one
+        blog at a time.
+      </p>
+    </section>
+
     <section id="contact-section" class="contact hidden">
       <h2>Contact Us</h2>
       <p>We’d love to hear from you! Send us your thoughts or inquiries.</p>
@@ -130,27 +152,44 @@
 
     <script>
       const homeLink = document.getElementById("home-link");
+      const aboutLink = document.getElementById("about-link");
       const contactLink = document.getElementById("contact-link");
       const homeSection = document.getElementById("home-section");
+      const aboutSection = document.getElementById("about-section");
       const contactSection = document.getElementById("contact-section");
 
       homeSection.classList.remove("hidden");
+      aboutSection.classList.add("hidden");
       contactSection.classList.add("hidden");
+
+      function showSection(show, hide1, hide2) {
+        show.classList.remove("hidden");
+        hide1.classList.add("hidden");
+        hide2.classList.add("hidden");
+      }
+
+      function setActive(active, inactive1, inactive2) {
+        active.classList.add("active");
+        inactive1.classList.remove("active");
+        inactive2.classList.remove("active");
+      }
 
       homeLink.addEventListener("click", (e) => {
         e.preventDefault();
-        homeSection.classList.remove("hidden");
-        contactSection.classList.add("hidden");
-        homeLink.classList.add("active");
-        contactLink.classList.remove("active");
+        showSection(homeSection, aboutSection, contactSection);
+        setActive(homeLink, aboutLink, contactLink);
+      });
+
+      aboutLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        showSection(aboutSection, homeSection, contactSection);
+        setActive(aboutLink, homeLink, contactLink);
       });
 
       contactLink.addEventListener("click", (e) => {
         e.preventDefault();
-        contactSection.classList.remove("hidden");
-        homeSection.classList.add("hidden");
-        contactLink.classList.add("active");
-        homeLink.classList.remove("active");
+        showSection(contactSection, homeSection, aboutSection);
+        setActive(contactLink, homeLink, aboutLink);
       });
     </script>
   </body>

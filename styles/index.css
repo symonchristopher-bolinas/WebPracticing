@@ -11,10 +11,36 @@
 * {
   box-sizing: border-box;
 }
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
 }
 
 #bg-video {
@@ -256,4 +282,27 @@ footer {
 nav a.active {
   color: var(--accent1);
   font-weight: 600;
+}
+
+.about {
+  background: rgba(255, 255, 255, 0.85);
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  max-width: 800px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.about p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
 }
