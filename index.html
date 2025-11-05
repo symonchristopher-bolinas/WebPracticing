@@ -23,7 +23,7 @@
       <nav>
         <a href="#" id="home-link" class="active">Home</a>
         <a href="#" id="about-link">About</a>
-        <a href="#categories">Categories</a>
+        <a href="#" id="category-link">Category</a>
         <a href="#" id="contact-link">Contact</a>
         <a href="#" id="signin-link">Sign In</a>
       </nav>
@@ -104,6 +104,27 @@
       </p>
     </section>
 
+    <section id="category-section" class="category hidden">
+      <h2>category DailyBlogs</h2>
+      <p>
+        DailyBlogs was created to inspire, inform, and connect storytellers from
+        all walks of life. We believe that sharing personal stories,
+        experiences, and insights brings people closer and sparks creativity.
+      </p>
+
+      <p>
+        Whether you’re a passionate writer, a curious reader, or just someone
+        looking for daily motivation, this platform is for you. Our goal is to
+        make writing and reading a habit that fuels growth and understanding
+        every single day.
+      </p>
+
+      <p>
+        Join our community of storytellers and start sharing your journey, one
+        blog at a time.
+      </p>
+    </section>
+    
     <section id="contact-section" class="contact hidden">
       <h2>Contact Us</h2>
       <p>We’d love to hear from you! Send us your thoughts or inquiries.</p>
@@ -146,6 +167,26 @@
       </form>
     </section>
 
+    <section id="signin-section" class="signin hidden">
+    <div class="glass-container">
+      <h2>Sign In Here</h2>
+      <form>
+        <div class="input-group">
+          <label>Username</label>
+          <input type="text" required>
+        </div>
+        <div class="input-group">
+          <label>Password</label>
+          <input type="password">
+        </div>
+          <div class="remember-forget">
+          <label><input type="checkbox"> Remember me</label>
+          <a href="#">forgot Password</a>
+        </div>
+      </form>
+    </div>
+    </section>
+ 
     <footer>
       © 2025 DailyBlogs. All rights reserved. Built with heart for storytellers.
     </footer>
@@ -153,43 +194,65 @@
     <script>
       const homeLink = document.getElementById("home-link");
       const aboutLink = document.getElementById("about-link");
+      const categoryLink = document.getElementById("category-link");
       const contactLink = document.getElementById("contact-link");
+      const signinLink = document.getElementById("signin-link");
       const homeSection = document.getElementById("home-section");
       const aboutSection = document.getElementById("about-section");
+      const categorySection = document.getElementById("category-section");
       const contactSection = document.getElementById("contact-section");
+      const signinSection = document.getElementById("signin-section");
 
       homeSection.classList.remove("hidden");
       aboutSection.classList.add("hidden");
+      categorySection.classList.add("hidden");
       contactSection.classList.add("hidden");
+      signinSection.classList.add("hidden");
 
-      function showSection(show, hide1, hide2) {
+      function showSection(show, hide1, hide2, hide3, hide4) {
         show.classList.remove("hidden");
         hide1.classList.add("hidden");
         hide2.classList.add("hidden");
+        hide3.classList.add("hidden");
+        hide4.classList.add("hidden");
       }
 
-      function setActive(active, inactive1, inactive2) {
+      function setActive(active, inactive1, inactive2, inactive3, inactive4) {
         active.classList.add("active");
         inactive1.classList.remove("active");
         inactive2.classList.remove("active");
+        inactive3.classList.remove("active");
+        inactive4.classList.remove("active");
       }
 
       homeLink.addEventListener("click", (e) => {
         e.preventDefault();
-        showSection(homeSection, aboutSection, contactSection);
-        setActive(homeLink, aboutLink, contactLink);
+        showSection(homeSection, aboutSection, categorySection, contactSection, signinSection);
+        setActive(homeLink, aboutLink, categoryLink, contactLink, signinLink);
       });
 
       aboutLink.addEventListener("click", (e) => {
         e.preventDefault();
-        showSection(aboutSection, homeSection, contactSection);
-        setActive(aboutLink, homeLink, contactLink);
+        showSection(aboutSection, homeSection, categorySection, contactSection, signinSection);
+        setActive(aboutLink, homeLink, categoryLink, contactLink, signinLink);
+      });
+
+      categoryLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        showSection(categorySection, contactSection, homeSection, aboutSection, signinSection);
+        setActive(categoryLink, contactLink, homeLink, aboutLink, signinLink);
       });
 
       contactLink.addEventListener("click", (e) => {
         e.preventDefault();
-        showSection(contactSection, homeSection, aboutSection);
-        setActive(contactLink, homeLink, aboutLink);
+        showSection(contactSection, homeSection, categorySection, aboutSection, signinSection);
+        setActive(contactLink, homeLink, categoryLink, aboutLink, signinLink);
+      });
+
+        signinLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        showSection(signinSection, contactSection, homeSection, categorySection, aboutSection);
+        setActive(signinLink, contactLink, homeLink, categoryLink, aboutLink);
       });
     </script>
   </body>

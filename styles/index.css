@@ -306,3 +306,53 @@ nav a.active {
   margin-bottom: 1rem;
   font-size: 1.05rem;
 }
+
+.category {
+  background: rgba(255, 255, 255, 0.85);
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  max-width: 800px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.category h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.category p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.signin {
+  background: rgba(255, 255, 255, 0.85);
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  max-width: 800px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.signin h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.signin p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.signin button{
+  background-color: blueviolet
+}
