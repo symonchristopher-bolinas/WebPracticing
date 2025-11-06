@@ -330,33 +330,6 @@ nav a.active {
   font-size: 1.05rem;
 }
 
-.signin {
-  background: rgba(255, 255, 255, 0.85);
-  margin: 4rem auto;
-  padding: 3rem 2rem;
-  max-width: 800px;
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.signin h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--text);
-}
-
-.signin p {
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
-}
-
-.signin button{
-  background-color: blueviolet
-}
-
 .contact-form .btn {
   background: var(--accent1);
   color: #ffffff;
@@ -377,57 +350,126 @@ nav a.active {
   font-weight: 600;
 }
 
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+.signin { 
+background: rgba(255, 255, 255, 0.85); 
+margin: 4rem auto; 
+padding: 3rem 2rem; 
+max-width: 800px; 
+border-radius: 1rem; 
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+text-align: center; 
+} 
+
+.signin h2 { 
+font-size: 2rem; 
+margin-bottom: 1rem; 
+color: var(--text); 
+} 
+
+.signin p { 
+color: var(--muted); 
+line-height: 1.7; 
+margin-bottom: 1rem; 
+font-size: 1.05rem; 
+}
+
+.signin button{ 
+background-color: blueviolet 
+}
+
+/* Registration Modal (scoped using ID) */
+#myModal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
 }
 
-.modal-content {
-  background-color: #fefefe;
+#myModal .modal-content {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 25%;
-  border-radius: 10%;
+  padding: 30px 40px;
+  width: 90%;
+  max-width: 400px;
+  color: #fff;
+  animation: fadeIn 0.3s ease;
 }
 
-/* The Close Button */
-.close {
-  color: #aaaaaa;
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+#myModal .close {
+  color: #fff;
   float: right;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.modal-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--text);
+#myModal .close:hover {
+  color: #ff4ffb;
 }
 
-.modal-content p {
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
+#myModal h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #fff;
 }
 
-.modal-content button{
-  background-color: blueviolet
+#myModal .form-group {
+  margin-bottom: 15px;
+}
+
+#myModal label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #e2e2e2;
+}
+
+#myModal input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+#myModal input::placeholder {
+  color: #ccc;
+}
+
+#myModal .btn {
+  width: 100%;
+  background: linear-gradient(135deg, #6c63ff, #ab47bc);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myModal .btn:hover {
+  background: linear-gradient(135deg, #7c6eff, #c158dc);
+  transform: scale(1.03);
 }
